@@ -16,16 +16,31 @@
         <tbody>
             @foreach(var product in Model)
         {
-            <tr>
+            <tr id="product-@product.id">
                 <td>@product.id</td>
                 <td>@product.name</td>
                 <td>@product.price</td>
                 <td><a class="btn btn-primary" href="Product/Update?id=@product.id">Edit</a></td>
-                <td><a class="btn btn-danger" href="Product/Delete?id=@product.id">Delete</a></td>
+                <td><a class="btn btn-danger" id="@product.id" onclick="DeleteClick(this.id)">Delete</a></td>
             </tr>
         }
         </tbody>
     </table>
 <script>
-    
+    function DeleteClick(id) {
+        if (confirm("Confirm delete product?")) {
+            var deleteID = id;
+            var currentProduct = document.getElementById("product-"+deleteID);
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    alert("Delete success!");
+                    currentProduct.remove();
+                }
+            }
+            xmlHttpRequest.open("DELETE", "/Product/DeleteProduct?id=" + deleteID, true);
+            xmlHttpRequest.send();
+        }
+        
+    }
 </script>

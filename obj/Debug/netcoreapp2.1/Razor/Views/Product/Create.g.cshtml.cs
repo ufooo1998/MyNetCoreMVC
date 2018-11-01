@@ -65,7 +65,7 @@ using MyNetCoreMVC.Models;
             WriteLiteral("\r\n<h2>Create product</h2>\r\n");
             EndContext();
             BeginContext(71, 732, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0bf184c193540e6a04c75cc69e68b18", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ec64a169ff74da18e83aaa688fd31ee", async() => {
                 BeginContext(111, 685, true);
                 WriteLiteral(@"
     <table class=""table"">

@@ -72,7 +72,7 @@ Write(Model);
             WriteLiteral("\r\n<h2>Update product</h2>\r\n");
             EndContext();
             BeginContext(85, 958, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ab76eabfa9d4669b1d579c20ae7c0aa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb2f7f203a5945e39e7b4cf7290a83ca", async() => {
                 BeginContext(128, 142, true);
                 WriteLiteral("\r\n    <table class=\"table\">\r\n        <thead>\r\n        </thead>\r\n        <tbody>\r\n            <tr>\r\n                <td hidden><input name=\"id\"");
                 EndContext();
