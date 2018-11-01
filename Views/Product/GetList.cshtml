@@ -1,0 +1,31 @@
+﻿@model List<Product>
+    @{
+    ViewData["Title"] = "GetList";
+    }
+
+    <h2>Get List</h2>
+    <p class="alert-success">@TempData["nontification"]</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Product ID</td>
+                <td>Product Name</td>
+                <td>Product Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+        {
+            <tr>
+                <td>@product.id</td>
+                <td>@product.name</td>
+                <td>@product.price</td>
+                <td><a class="btn btn-primary" href="Product/Update?id=@product.id">Edit</a></td>
+                <td><a class="btn btn-danger" href="Product/Delete?id=@product.id">Delete</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+<script>
+    
+</script>

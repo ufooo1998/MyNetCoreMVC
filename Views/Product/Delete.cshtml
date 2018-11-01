@@ -1,0 +1,29 @@
+﻿@Model Product
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete product</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Product ID</td>
+            <td>Product Name</td>
+            <td>Product Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.name</td>
+            <td>@Model.price</td>
+            <td>
+                <form action="DeleteProduct">
+                    <input hidden name="id" value="@Model.id" />
+                    <input class="btn btn-danger" type="submit" value="Delete" />
+                </form>
+            </td>
+            <td><a href="/" class="btn btn-default">Cancel</a></td>
+        </tr>
+    </tbody>
+</table>
