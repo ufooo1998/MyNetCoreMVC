@@ -8,20 +8,25 @@
     <table class="table">
         <thead>
             <tr>
-                <td>Product ID</td>
-                <td>Product Name</td>
-                <td>Product Price</td>
+                <td width="100"><input type="checkbox" id="check-all"/></td>
+                <td width="100">Product ID</td>
+                <td width="400">Product Name</td>
+                <td width="150">Product Price</td>
+                <td width="100"></td>
             </tr>
         </thead>
         <tbody>
             @foreach(var product in Model)
         {
             <tr id="product-@product.id">
+                <td><input type="checkbox" class="item-check" onchange="DeleteAll(this)"/></td>
                 <td>@product.id</td>
                 <td>@product.name</td>
                 <td>@product.price</td>
-                <td><a class="btn btn-primary" href="Product/Update?id=@product.id">Edit</a></td>
-                <td><a class="btn btn-danger" id="@product.id" onclick="DeleteClick(this.id)">Delete</a></td>
+                <td>
+                    <a class="btn btn-primary" href="Product/Update?id=@product.id">Edit</a>
+                    <a class="btn btn-danger" id="@product.id" onclick="DeleteClick(this.id)">Delete</a>
+                </td>
             </tr>
         }
         </tbody>
@@ -42,5 +47,8 @@
             xmlHttpRequest.send();
         }
         
+    }
+    function DeleteAll(this) {
+        alert(1);
     }
 </script>
